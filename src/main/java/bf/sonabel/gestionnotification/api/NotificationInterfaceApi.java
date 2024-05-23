@@ -13,4 +13,9 @@ import java.util.List;
  */
 public interface NotificationInterfaceApi {
     List<Notification> createListNotifications(List<Notification> listNotifications);
+    
+    List<Notification> getListNotifications();
 }
+
+
+

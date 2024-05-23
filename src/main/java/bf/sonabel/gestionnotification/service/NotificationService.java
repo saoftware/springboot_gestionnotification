@@ -19,10 +19,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotificationService {
     
-    @Autowired private NotificationInterfaceApi notificationInterfaceApi;
+    @Autowired
+    private NotificationInterfaceApi notificationInterfaceApi;
     
     public List<Notification> sendNotification(List<Notification> listNotifications){
         //return notificationInterfaceApi.
         return notificationInterfaceApi.createListNotifications(listNotifications);
     }
+    
+    public List<Notification> getNotifications(){
+        return notificationInterfaceApi.getListNotifications();
+    }
+    
 }

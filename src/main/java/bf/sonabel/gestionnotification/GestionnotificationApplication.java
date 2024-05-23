@@ -47,7 +47,7 @@ public class GestionnotificationApplication {
             listNotifications.add(smsNotification);
             listNotifications.add(emailNotification);
         
-            context.getBean(NotificationService.class).sendNotification(listNotifications);
+            //context.getBean(NotificationService.class).sendNotification(listNotifications);
 	}
       
 }
