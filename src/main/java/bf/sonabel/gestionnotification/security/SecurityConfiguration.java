@@ -51,8 +51,14 @@ public class SecurityConfiguration {
                 .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))).build();
     }
 
+    /**
+     * Politique de sécurité en production.
+     * @param httpSecurity Un objet de type HttpSecurity
+     * @return SecurityFilterChain
+     * @throws Exception 
+     */
     @Bean
-    @Profile("prod")
+    @Profile({"prod"}) 
     public SecurityFilterChain configureProd(final HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(a -> a.anyRequest().fullyAuthenticated()
         ).sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
